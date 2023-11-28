@@ -1,0 +1,26 @@
+#img{
+    display: flex;
+    flex-direction: column;
+    width: 50vh;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    align-items: center;
+    width: 100vw;
+    padding: 20px;
+    height: 100vh;
+    /* margin-top: 5%; */
+    /* margin-right: 40%; */
+    background-image: url(../plus.png);
+    background-size: cover;
+    background-position: center;
+    /* opacity: 56%;*/
+} 
+p{
+    background-color: white;
+    font-size: 5em;
+    opacity: 35%;
+    margin-top: 0%;
+}
+#backButton{
+   
+}
