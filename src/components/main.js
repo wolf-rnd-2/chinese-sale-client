@@ -10,7 +10,7 @@ export default function Main() {
     // let grade = location.state.grade
     let id = location.state.id
     const donate = () => {
-        navigate("/form", { state: { name } })
+        navigate("/form", { state: { name, id } })
     }
     const viewPoints = () => {
         navigate("/point", { state: { name, id } })
