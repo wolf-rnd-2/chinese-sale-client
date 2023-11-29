@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useNavigate } from 'react-router-dom';
-import axios from "axios";
+import {axios} from "axios";
 
 export default function Login() {
 
@@ -14,7 +14,7 @@ export default function Login() {
 
   const login = async () => {
     try {
-      let student = await axios.get('https://weak-plum-ostrich-wear.cyclic.app/student/' + password)
+      let student = await axios.get(`https://weak-plum-ostrich-wear.cyclic.app/student/${password}`)
       const name = student.data.name
       const id = student.data.studentId
       if (name)
