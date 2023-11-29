@@ -1,20 +1,16 @@
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";
 import '../csses/login.css'
-import backgroundImage from '../plus.png';
 import React, { useState } from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
-import { Form } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import axios from "axios";
 
 export default function Login() {
 
   const navigate = useNavigate();
   const [password, setPassword] = useState("")
-  let isExist = true;
 
   const login = async () => {
     try {
