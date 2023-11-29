@@ -12,8 +12,6 @@ export default function Router(){
               <Route path="/form" element={<Form/>}/>
               <Route path="/point" element={<Point/>}/>      
               <Route path="/main" element={<Main/>}/>      
-
         </Routes>
-      
     )
 }
