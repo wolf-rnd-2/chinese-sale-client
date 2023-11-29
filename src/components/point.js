@@ -15,7 +15,7 @@ export default function Point() {
 
         sumPoints()
 
-    }), [])
+    }))
     const sumPoints = async () => {
         let points = await axios.get(`https://weak-plum-ostrich-wear.cyclic.app/${id}`)
         if (points.data.sum  > 0) {
