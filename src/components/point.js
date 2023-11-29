@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import '../csses/point.css'
 import { Button } from 'primereact/button';
 import { useLocation, useNavigate } from "react-router";
-import {axios} from "axios";
+import axios from "axios";
 
 export default function Point() {
 
