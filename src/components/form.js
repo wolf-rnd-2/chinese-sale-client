@@ -15,7 +15,10 @@ import { FilloutFullScreenEmbed } from "@fillout/react";
 function Form() {
   return (
   
-    <FilloutFullScreenEmbed filloutId="jCkFmuHQoQus" inheritParameters />
+    <FilloutFullScreenEmbed filloutId="jCkFmuHQoQus" inheritParameters parameters={{
+      name: "test",
+      tz: "207145244"
+    }} />
 //   {alert("winnnnnnn")}
   );
 }

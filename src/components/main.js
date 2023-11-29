@@ -13,7 +13,6 @@ export default function Main() {
         navigate("/form", { state: { name } })
     }
     const viewPoints = () => {
-        debugger
         navigate("/point", { state: { name, id } })
     }
     return (<>

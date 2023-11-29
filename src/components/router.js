@@ -6,7 +6,7 @@ import Main from "./main";
 
 
 export default function Router(){
-    return(
+    return( 
         <Routes>
               <Route path="/" element={<Login/>}/>
               <Route path="/form" element={<Form/>}/>

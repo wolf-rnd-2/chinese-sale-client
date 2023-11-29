@@ -21,9 +21,11 @@ export default function Login() {
       let student = await axios.get(`https://weak-plum-ostrich-wear.cyclic.app/student/${password}`)
       const name = student.data.name
       const id = student.data.studentId
+      if (name)
+        navigate("/main", { state: { name, id } });
+      else {
+        alert("הסיסמא שהקשת אינה נמצאת במערכת. הקישי סיסמא שונה.")
 
-      navigate("/main", { state: { name, id } });
-      if (student.name) {
       }
     }
     catch (err) {
