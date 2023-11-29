@@ -16,6 +16,7 @@
     /* opacity: 56%;*/
 } 
 p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     direction: rtl;
     background-color: white;
     font-size: 5em;

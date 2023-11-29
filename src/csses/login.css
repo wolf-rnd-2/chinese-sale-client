@@ -40,3 +40,8 @@ Button{
     background-position: center;
     
   } */
+
+
+  .error {
+    color: red;
+  }

@@ -1,32 +1,37 @@
-import react,{ useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import '../csses/point.css'
 import { Button } from 'primereact/button';
-import { useLocation,useNavigate } from "react-router";
-export default function Point(){
+import { useLocation, useNavigate } from "react-router";
+import axios from "axios";
 
-    let location=useLocation()
-    let navigate=useNavigate()
-    let name=location.state.name
-let lastName=location.state.lastName
-let grade=location.state.grade
-let id=location.state.studenId
-//sum-
-//פה חסרה קריאת שרת ולשלוח לה את 
-//location.state.id
-    const sum=550;
-    const [points,setPoints]=useState(0);
-    useEffect((()=>{
-        let tmp=(sum/50)*5;
-        setPoints(tmp)
-    }),[])
+export default function Point() {
 
-    const back=()=>{
-navigate('/main',{state:{name,lastName,grade,id}})
+    let location = useLocation()
+    let navigate = useNavigate()
+    let name = location.state.name
+    let id = location.state.id
+    const [points, setPoints] = useState(0);
+    useEffect((() => {
+
+        sumPoints()
+
+    }), [])
+    const sumPoints = async () => {
+        let points = await axios.get(`https://weak-plum-ostrich-wear.cyclic.app/${id}`)
+        if (points.data.sum  > 0) {
+            setPoints((points.data.sum / 50)*5);
+        }
     }
-    return(<>
+    const back = () => {
+        navigate('/main', { state: { name, id } })
+    }
+    return (<>
         <div id="img">
+            <header>
+                <Button icon="pi pi-times" rounded text raised aria-label="Cancel" id="backButton" onClick={() => back()}>{"->"}</Button>
+
+            </header><br />
             <p>עד כה צברת {points} נקודות!</p>
-            <Button icon="pi pi-times" rounded text raised  aria-label="Cancel" id="backButton" onClick={()=>back()}>{">"}</Button>
-        </div>   
+        </div>
     </>)
 }
