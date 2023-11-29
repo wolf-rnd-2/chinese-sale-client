@@ -2,16 +2,17 @@
 import { useLocation } from 'react-router'
 import { FilloutFullScreenEmbed } from "@fillout/react";
 
-function Form() {
+export default function Form() {
   let location = useLocation();
   let name = location.state.name
-  let id = location.state.id
-  return (
-  
-    <FilloutFullScreenEmbed filloutId="jCkFmuHQoQus" inheritParameters parameters={{
-      student: name,
-      id: id
-    }} />
-  );
+  let id = location.state.id;
+
+  return (<>
+    <div>
+      <FilloutFullScreenEmbed filloutId="jCkFmuHQoQus" inheritParameters parameters={{
+        student: name,
+        id: id
+      }} />
+    </div>
+  </>);
 }
-export default Form;
