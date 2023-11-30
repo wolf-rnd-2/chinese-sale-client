@@ -1,6 +1,7 @@
 import Router from "./components/router";
 import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
+import '../src/plus.png'
 
 
 function App() {

@@ -18,7 +18,7 @@
 #form{
 
     display: flex;
-    background: transparent;
+    /* background: transparent; */
 
     padding: 4%;
     flex-direction: column;
@@ -42,6 +42,17 @@ Button{
   } */
 
 
-  .error {
+/* .error {
     color: red;
+font-size: 2px;
+background:none;
+
+  } */
+ #form p{
+    background-color: white;
+    /* font-size: 5em; */
+    opacity: 100%;
+    color: red;
+   /* background:none; */
+   font-size: 1.2em;
   }

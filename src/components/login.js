@@ -11,46 +11,43 @@ export default function Login() {
 
   const navigate = useNavigate();
   const [password, setPassword] = useState("")
+  const [isErr, setisErr] = useState(false)
+   const [isWorngPass, setisWorngPass] = useState(false)
 
   const login = async () => {
     try {
       let student = await axios.get(`https://weak-plum-ostrich-wear.cyclic.app/student/${password}`)
       const name = student.data.name
       const id = student.data.studentId
+      console.log("data: ",student.data)
       if (name)
         navigate("/main", { state: { name, id } });
       else {
-        alert("הסיסמא שהקשת אינה נמצאת במערכת. הקישי סיסמא שונה.")
+        setisWorngPass(true)
 
       }
     }
     catch (err) {
-      alert("הסיסמא שהקשת אינה נמצאת במערכת. הקישי סיסמא שונה.")
+    setisErr(true)
+    console.log("catch err: ",err)
     }
   }
-  // const rocketId = password;
 
   return (
     <>
       <div className="field col-12 md:col-4" id="divLogin">
         <div id="form">
-          <label>לכניסה הקישי קוד אישי</label><br />
+
+          <label>לכניסה הזיני קוד אישי</label><br />
           {/* אם יהיה זמן לעשות שעובר דף בלחיצה על אנטר */}
           <InputText type="password" id="password" onChange={(e) => setPassword(e.target.value)} /><br />
-          {/* <Password  id="password" toggleMask onChange={(e)=>setPassword(e.target.value)}/><br/> */}
+          {isWorngPass&&<p >הסיסמא שהזנת אינה מופיעה במערכת. אנא הזיני שנית.</p>}
+          {isErr&&<p style={{fontSize:"2em"}}>מצטערים, ישנה תקלה במערכת.</p>}
+
           <Button label="הכנסי" className="p-button-raised p-button-secondary" onClick={() => login()} /><br />
-          {/* <Link to={`/fillout/${rocketId}`}>Go to FILLOUT Form</Link> */}
         </div>
       </div>
     </>
   );
 }
-//
 
-// const Login = () => {
-//   const rocketId = 'YOUR_ROCKET_ID'; // Replace with the actual rocket ID
-
-//   return (
-//     <Link to={`/fillout/${rocketId}`}>Go to FILLOUT Form</Link>
-//   );
-// };
