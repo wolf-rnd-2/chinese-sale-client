@@ -15,12 +15,16 @@ export default function Main() {
     const viewPoints = () => {
         navigate("/point", { state: { name, id } })
     }
+    const chooseGifts = () => {
+        navigate("/ChooseGifts", { state: { name, id } })
+    }
     return (<>
         {console.log("main")}
         <div id="img">
             <p>שלום לך {name}!</p>
             <Button label="להזנת התרומה" className="p-button-raised p-button-secondary" onClick={() => donate()} /><br />
             <Button label="הנקודות שצברת" className="p-button-raised p-button-secondary" onClick={() => viewPoints()} />
+            <Button label="בחירת מתנות" className="p-button-raised p-button-secondary" onClick={() =>chooseGifts()} />
 
         </div>
     </>

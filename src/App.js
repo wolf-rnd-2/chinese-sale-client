@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Button label="כניסה חדשה למערכת" className="p-button-raised p-button-secondary login-btn" onClick={() => login()} /><br />
+      <Button label="יציאה וכניסה חדשה למערכת" className="p-button-raised p-button-secondary login-btn" onClick={() => login()} /><br />
       <Router></Router>
     </>
   );
