@@ -9,7 +9,6 @@ export default function Main() {
     // let lastName = location.state.lastName
     // let grade = location.state.grade
     let id = location.state.id
-    debugger
     const donate = () => {
         navigate("/form", { state: { name, id } })
     }

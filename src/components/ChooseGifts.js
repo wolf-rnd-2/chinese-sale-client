@@ -8,8 +8,6 @@ export default function ChooseGifts() {
     let location = useLocation();
     let name = location.state.name
     let id = location.state.id;
-    let pwd = location.state.pwd;
-    debugger
     const [points, setPoints] = useState(0);
     const [balance, setBalance] = useState([]);
     const [stampPrice, setStampPrice] = useState([]);
@@ -17,7 +15,6 @@ export default function ChooseGifts() {
     useEffect((() => {
         getSumPoints();
         getBalance();
-        debugger
         getStampPrice();
     }))
     const getBalance = async () => {

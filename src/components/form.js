@@ -6,7 +6,6 @@ export default function Form() {
   let location = useLocation();
   let name = location.state.name
   let id = location.state.id;
-debugger
   return (<>
     <div>
       <FilloutFullScreenEmbed filloutId="jCkFmuHQoQus" inheritParameters parameters={{

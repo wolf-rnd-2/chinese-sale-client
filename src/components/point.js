@@ -10,7 +10,6 @@ export default function Point() {
     let navigate = useNavigate()
     let name = location.state.name
     let id = location.state.id
-    debugger
     const [points, setPoints] = useState(0);
     useEffect((() => {
 
